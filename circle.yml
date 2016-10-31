@@ -8,4 +8,4 @@ dependencies:
 
 test:
   post:
-    - docker run --volume=$(pwd):/app --workdir=/app coala/base coala-ci
+    - docker run --volume=~/Ayanami:/app --workdir=/app coala/base coala-ci
