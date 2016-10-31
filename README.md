@@ -1,4 +1,5 @@
-[![codecov](https://codecov.io/gh/patiOne/Ayanami/branch/master/graph/badge.svg)](https://codecov.io/gh/patiOne/Ayanami) [![CircleCI](https://circleci.com/gh/patiOne/Ayanami.svg?style=svg)](https://circleci.com/gh/patiOne/Ayanami)
+[![codecov](https://codecov.io/gh/patiOne/Ayanami/branch/master/graph/badge.svg)](https://codecov.io/gh/patiOne/Ayanami) 
+[![CircleCI](https://circleci.com/gh/patiOne/Ayanami.svg?style=svg)](https://circleci.com/gh/patiOne/Ayanami)
 # Ayanami
 
 A Telegram Bot API for Ruby that focuses on simplicity.
