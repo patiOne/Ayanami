@@ -1,8 +1,7 @@
 # Ayanami
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Ayanami`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Telegram Bot API for Ruby that focuses on simplicity. Ayanami is meant to be a simple interface to Telegram's Bot API. 
+The Goal of Ayanami is to keeping it simple and barebone so other people can use it for their own needs.
 
 ## Installation
 
@@ -18,11 +17,35 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install Ayanami
+    $ gem install ayanami
 
 ## Usage
 
-TODO: Write usage instructions here
+You can start by creating a Bot object.
+
+```ruby
+	b = Ayanami::Bot.new('YOUR_BOT_TOKEN_GOES_HERE')
+```
+
+To confirm the connection, You can invoke the `get_me` function to see your bot identity.
+
+```ruby
+	puts b.get_me
+```
+
+To get received messages or other updates, You can invoke the `get_updates` function to receive updates.
+
+```ruby
+	puts b.get_updates()
+```
+
+You can also send a simple message to a group/user by invoking the `send_message` function.
+
+```ruby
+	puts b.send_message(chat_id: USER_OR_CHAT_ID_GOES_HERE, text: 'Hello :)')
+```
+
+For more information about the included functions, Please consult [Telegram's Bot API documentation](https://core.telegram.org/bots/api)
 
 ## Development
 
@@ -32,7 +55,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/Ayanami.
+Bug reports and pull requests are welcome on GitHub at https://github.com/patiOne/Ayanami.
 
 
 ## License
