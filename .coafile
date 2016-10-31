@@ -1,6 +1,7 @@
 [default]
 bears = FilenameBear, coalaBear, KeywordBear, SpaceConsistencyBear
 files = **.txt, **.md
+ignore = vendor/**
 cs_keywords = FIXME
 ci_keywords = FIXME
 max_line_length = 100
