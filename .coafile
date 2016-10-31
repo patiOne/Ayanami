@@ -1,0 +1,17 @@
+[default]
+bears = FilenameBear, coalaBear, KeywordBear, SpaceConsistencyBear
+files = **.txt, **.md
+cs_keywords = FIXME
+ci_keywords = FIXME
+max_line_length = 100
+use_spaces = True
+
+[text]
+bears = LineLengthBear
+files = **.txt, **.md
+
+[ruby]
+bears = CPDBear, RuboCopBear, RubySmellBear, RubySyntaxBear
+files = lib/**.rb
+too_many_methods = False
+language = Ruby
