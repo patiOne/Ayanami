@@ -2,6 +2,10 @@ machine:
   services:
     - docker
 
+dependencies:
+  post:
+    - docker pull coala/base
+
 test:
   post:
     - docker run --volume=$(pwd):/app --workdir=/app coala/base coala-ci
