@@ -3,12 +3,20 @@ require 'json'
 
 module Ayanami
   # Bot is an interface for a Telegram Bot
+  # rubocop:disable Metrics/ClassLength
   class Bot
     def initialize(token)
       @token = token
     end
 
+    def verify_arguments(**args)
+      args.each do |k, v|
+        throw "#{k} can't be nil. Nil variables aren't allowed" if v.nil?
+      end
+    end
+
     def request(method, **args)
+      verify_arguments(args)
       res = RestClient.post("https://api.telegram.org/bot#{@token}/#{method}",
                             args)
       return JSON.parse(res)
