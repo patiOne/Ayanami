@@ -11,7 +11,6 @@ end
 # Test Cases for the hacks used in Ayanami
 # rubocop:disable Metrics/AbcSize
 class HacksTest < Minitest::Test
-
   def test_grab_parameters_basic
     assert Ayanami.gimme.is_a? Hash
     assert Ayanami.gimme(2).is_a? Hash
