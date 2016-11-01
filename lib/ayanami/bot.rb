@@ -12,8 +12,8 @@ module Ayanami
 
     def verify_arguments(**args)
       args.each do |k, v|
-        throw "#{k} can't be nil. Nil variables aren't allowed. "\
-              "Make sure you've filled the required arguments" if v.nil?
+        raise ArgumentError, "#{k} can't be nil. nil values aren't allowed"\
+          if v.nil?
       end
     end
 
