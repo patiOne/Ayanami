@@ -1,5 +1,5 @@
 [![codecov](https://codecov.io/gh/patiOne/Ayanami/branch/master/graph/badge.svg)]
-(https://codecov.io/gh/patiOne/Ayanami) 
+(https://codecov.io/gh/patiOne/Ayanami)
 [![CircleCI](https://circleci.com/gh/patiOne/Ayanami.svg?style=svg)]
 (https://circleci.com/gh/patiOne/Ayanami)
 
@@ -7,10 +7,10 @@
 
 > "If I die, I can be replaced" - Rei Ayanami
 
-A Telegram Bot API for Ruby that focuses on simplicity. Ayanami is meant to be a simple 
+A Telegram Bot API for Ruby that focuses on simplicity. Ayanami is meant to be a simple
 interface to Telegram's Bot API.
 
-The Goal of Ayanami is to keeping it simple and barebone, so other people can use it 
+The Goal of Ayanami is to keeping it simple and barebone, so other people can use it
 for their own purposes/needs.
 
 ## Installation
@@ -43,7 +43,7 @@ To confirm the connection, You can invoke the `get_me` function to see your bot 
 puts b.get_me
 ```
 
-To get received messages or other updates, You can invoke the `get_updates` function to 
+To get received messages or other updates, You can invoke the `get_updates` function to
 receive updates.
 
 ```ruby
@@ -61,8 +61,8 @@ Please consult [Telegram's Bot API documentation](https://core.telegram.org/bots
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` 
-to run the tests. You can also run `bin/console` for an interactive prompt that will allow 
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test`
+to run the tests. You can also run `bin/console` for an interactive prompt that will allow
 you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
