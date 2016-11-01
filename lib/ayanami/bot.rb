@@ -1,5 +1,6 @@
 require 'rest_client'
 require 'json'
+require 'ayanami/hacks'
 
 module Ayanami
   # Bot is an interface for a Telegram Bot
@@ -11,7 +12,8 @@ module Ayanami
 
     def verify_arguments(**args)
       args.each do |k, v|
-        throw "#{k} can't be nil. Nil variables aren't allowed" if v.nil?
+        throw "#{k} can't be nil. Nil variables aren't allowed. "\
+              "Make sure you've filled the required arguments" if v.nil?
       end
     end
 
@@ -36,127 +38,131 @@ module Ayanami
     end
 
     # Sends a Message. On success, the sent Message is returned.
-    def send_message(**args)
-      request('sendMessage', args)
+    def send_message(chat_id: nil, text: nil, **args)
+      request('sendMessage', grab_arguments(__method__, binding))
     end
 
     # Forwards a message. On success, the sent Message is returned.
-    def forward_message(**args)
-      request('forwardMessage', args)
+    def forward_message(chat_id: nil, from_chat_id: nil, message_id: nil,
+                        **args)
+      request('forwardMessage', grab_arguments(__method__, binding))
     end
 
     # Sends photos. On success, the sent Message is returned.
-    def send_photo(**args)
-      request('sendPhoto', args)
+    def send_photo(chat_id: nil, photo: nil, **args)
+      request('sendPhoto', grab_arguments(__method__, binding))
     end
 
     # Sends audio. On success, the sent Message is returned.
-    def send_audio(**args)
-      request('sendAudio', args)
+    def send_audio(chat_id: nil, audio: nil, **args)
+      request('sendAudio', grab_arguments(__method__, binding))
     end
 
     # Sends documents. On success, the sent Message is returned.
     # Bots can currently send files of any type of up to 50 MB in size.
-    def send_document(**args)
-      request('sendDocument', args)
+    def send_document(chat_id: nil, document: nil, **args)
+      request('sendDocument', grab_arguments(__method__, binding))
     end
 
     # Sends stickers. On success, the sent Message is returned.
-    def send_sticker(**args)
-      request('sendSticker', args)
+    def send_sticker(chat_id: nil, sticker: nil, **args)
+      request('sendSticker', grab_arguments(__method__, binding))
     end
 
     # Sends videos. Telegram clients support mp4 videos (other formats may be
     # sent as Document). On success, the sent Message is returned.
     # Bots can currently send video files of up to 50 MB in size.
-    def send_video(**args)
-      request('sendVideo', args)
+    def send_video(chat_id: nil, video: nil, **args)
+      request('sendVideo', grab_arguments(__method__, binding))
     end
 
     # Sends voice messages. The audio format must be in an .ogg file encoded
     # with OPUS (other formats may be sent as Audio or Document).
     # On success, the sent Message is returned.
     # Bots can currently send voice messages of up to 50 MB in size.
-    def send_voice(**args)
-      request('sendVoice', args)
+    def send_voice(chat_id: nil, voice: nil, **args)
+      request('sendVoice', grab_arguments(__method__, binding))
     end
 
     # Sends point on the map. On success, the sent Message is returned.
-    def send_location(**args)
-      request('sendLocation', args)
+    def send_location(chat_id: nil, latitude: nil, longitude: nil, **args)
+      request('sendLocation', grab_arguments(__method__, binding))
     end
 
     # Sends information about a venue. On success, the sent Message is returned.
-    def send_venue(**args)
-      request('sendVenue', args)
+    # rubocop:disable Metrics/ParameterLists
+    def send_venue(chat_id: nil, latitude: nil, longitude: nil, title: nil,
+                   address: nil, **args)
+      request('sendVenue', grab_arguments(__method__, binding))
     end
 
     # Sends phone contacts. On success, the sent Message is returned.
-    def send_contact(**args)
-      request('sendContact', args)
+    def send_contact(chat_id: nil, phone_number: nil, first_name: nil,
+                     last_name: nil, **args)
+      request('sendContact', grab_arguments(__method__, binding))
     end
 
     # Sends a status that tells something is happening. The status is set for
     # 5 seconds or less. Returns True on success.
-    def send_chat_action(**args)
-      request('sendChatAction', args)
+    def send_chat_action(chat_id: nil, action: nil)
+      request('sendChatAction', grab_arguments(__method__, binding))
     end
 
     # Returns a list of profile pictures for a user.
-    def get_user_profile_photos(**args)
-      request('getUserProfilePhotos', args)
+    def get_user_profile_photos(user_id: nil, **args)
+      request('getUserProfilePhotos', grab_arguments(__method__, binding))
     end
 
     # Returns a basic info about a file and prepare it for downloading.
     # Bots can download files up to 20 MB in size.
-    def get_file(**args)
-      request('getFile', args)
+    def get_file(file_id: nil)
+      request('getFile', grab_arguments(__method__, binding))
     end
 
     # Kicks a chat member from a group/supergroup.
-    def kick_chat_member(**args)
-      request('kickChatMember', args)
+    def kick_chat_member(chat_id: nil, user_id: nil)
+      request('kickChatMember', grab_arguments(__method__, binding))
     end
 
     # Leaves the group, supergroup, or channel.
-    def leave_chat(**args)
-      request('leaveChat', args)
+    def leave_chat(chat_id: nil)
+      request('leaveChat', grab_arguments(__method__, binding))
     end
 
     # Unbans previously kicked user in a supergroup.
-    def unban_chat_member(**args)
-      request('unbanChatMember', args)
+    def unban_chat_member(chat_id: nil, user_id: nil)
+      request('unbanChatMember', grab_arguments(__method__, binding))
     end
 
     # Returns information about the chat.
-    def get_chat(**args)
-      request('getChat', args)
+    def get_chat(chat_id: nil)
+      request('getChat', grab_arguments(__method__, binding))
     end
 
     # Returns a list of administratos in a chat.
-    def get_chat_administrators(**args)
-      request('getChatAdministrators', args)
+    def get_chat_administrators(chat_id: nil)
+      request('getChatAdministrators', grab_arguments(__method__, binding))
     end
 
     # Returns the number of members in a chat.
-    def get_chat_members_count(**args)
-      request('getChatMembersCount', args)
+    def get_chat_members_count(chat_id: nil)
+      request('getChatMembersCount', grab_arguments(__method__, binding))
     end
 
     # Returns an information about a member of a chat.
-    def get_chat_member(**args)
-      request('getChatMember', args)
+    def get_chat_member(chat_id: nil, user_id: nil)
+      request('getChatMember', grab_arguments(__method__, binding))
     end
 
     # Sends answers to callback queries sent from inline keyboards.
-    def answer_callback_query(**args)
-      request('answerCallbackQuery', args)
+    def answer_callback_query(callback_query_id: nil, **args)
+      request('answerCallbackQuery', grab_arguments(__method__, binding))
     end
 
     # Changes text and game messages sent by the bot or via the bot (for
     # inline bots).
-    def edit_message_text(**args)
-      request('editMessageText', args)
+    def edit_message_text(text: nil, **args)
+      request('editMessageText', grab_arguments(__method__, binding))
     end
 
     # Changes captions of messages sent by the bot or via the bot (for
@@ -172,21 +178,21 @@ module Ayanami
     end
 
     # Answers to an inline query. On success, True is returned.
-    def answer_inline_query(**args)
-      request('answer_inline_query', args)
+    def answer_inline_query(inline_query_id: nil, results: nil, **args)
+      request('answerInlineQuery', grab_parameters(__method__, binding))
     end
 
     # Sends a game. On success, the sent Message is returned.
-    def send_game(**args)
-      request('sendGame', args)
+    def send_game(chat_id: nil, game_short_name: nil, **args)
+      request('sendGame', grab_parameters(__method__, binding))
     end
 
     # Sets the score of the specified user in a game.
     # On success, if the message was sent by the bot, returns the edited
     # Message, otherwise returns True. Returns an error, if the new score is
     # not greater than the user's current score in the chat.
-    def set_game_score(**args)
-      request('setGameScore', args)
+    def set_game_score(used_id: nil, score: nil, **args)
+      request('setGameScore', grab_parameters(__method__, binding))
     end
   end
 end
