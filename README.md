@@ -1,6 +1,6 @@
-[![codecov](https://codecov.io/gh/patiOne/Ayanami/branch/master/graph/badge.svg)]
+[![codecov](https://codecov.io/gh/patiwan/Ayanami/branch/master/graph/badge.svg)]
 (https://codecov.io/gh/patiOne/Ayanami)
-[![CircleCI](https://circleci.com/gh/patiOne/Ayanami.svg?style=svg)]
+[![CircleCI](https://circleci.com/gh/patiwan/Ayanami.svg?style=svg)]
 (https://circleci.com/gh/patiOne/Ayanami)
 
 # Ayanami

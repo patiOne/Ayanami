@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'A Telegram Bot API that focuses on simplicity'
   spec.description   = spec.summary
-  spec.homepage      = 'https://github.com/patiOne/Ayanami'
+  spec.homepage      = 'https://github.com/patiwan/Ayanami'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
