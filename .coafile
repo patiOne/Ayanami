@@ -12,7 +12,7 @@ bears = LineLengthBear
 files = **.txt, **.md
 
 [ruby]
-bears = CPDBear, RuboCopBear, RubySmellBear, RubySyntaxBear
+bears = CPDBear, RuboCopBear, RubySyntaxBear
 files = lib/**.rb
 too_many_methods = False
 language = Ruby
