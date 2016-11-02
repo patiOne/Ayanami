@@ -9,3 +9,7 @@ dependencies:
 test:
   post:
     - docker run --volume=$(pwd):/app --workdir=/app coala/base coala-ci
+
+notify:
+  webhooks:
+    - url: https://webhooks.gitter.im/e/808949c372657ad460a6
