@@ -40,5 +40,9 @@ module Ayanami
     def self.inline_keyboard_button(text: nil, **args)
       __grab_parameters(__method__, binding)
     end
+
+    def self.keyboard_button(text: nil, **args)
+      __grab_parameters(__method__, binding)
+    end
   end
 end
