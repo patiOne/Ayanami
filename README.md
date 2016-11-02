@@ -20,7 +20,7 @@ for their own purposes/needs.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'Ayanami'
+gem 'ayanami'
 ```
 
 And then execute:
