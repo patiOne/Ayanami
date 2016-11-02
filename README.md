@@ -5,6 +5,8 @@
 
 # Ayanami
 
+[![Join the chat at https://gitter.im/patiwan/Ayanami](https://badges.gitter.im/patiwan/Ayanami.svg)](https://gitter.im/patiwan/Ayanami?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > "If I die, I can be replaced" - Rei Ayanami
 
 A Telegram Bot API for Ruby that focuses on simplicity. Ayanami is meant to be a simple
