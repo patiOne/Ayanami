@@ -2,6 +2,8 @@
 (https://codecov.io/gh/patiOne/Ayanami)
 [![CircleCI](https://circleci.com/gh/patiwan/Ayanami.svg?style=svg)]
 (https://circleci.com/gh/patiOne/Ayanami)
+[![Gitter](https://badges.gitter.im/patiwan/Ayanami.svg)]
+(https://gitter.im/patiwan/Ayanami?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # Ayanami
 
