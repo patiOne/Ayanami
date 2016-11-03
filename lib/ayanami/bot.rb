@@ -8,6 +8,8 @@ module Ayanami
   class Bot
     def initialize(token)
       @token = token
+      raise ArgumentError, "token can't be nil. Ayanami currently doesn't have"\
+                           ' support for Webhooks' if @token.nil?
     end
 
     def verify_arguments(**args)
