@@ -1,7 +1,7 @@
 require 'rest_client'
 require 'json'
 require 'ayanami/hacks'
-
+				
 module Ayanami
   # Bot is an interface for a Telegram Bot
   # rubocop:disable Metrics/ClassLength
